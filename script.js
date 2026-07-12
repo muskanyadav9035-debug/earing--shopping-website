@@ -1,5 +1,6 @@
 let cart = 0;
 let total = 0;
+let items = {};
 
 function addToCart(name, price) {
     cart++;
@@ -8,11 +9,34 @@ function addToCart(name, price) {
     document.getElementById("cartCount").innerText = cart;
     document.getElementById("total").innerText = total;
 
-    let li = document.createElement("li");
-    li.innerText = name + " - ₹" + price;
-    document.getElementById("cartList").appendChild(li);
+    if (items[name]) {
+        items[name].quantity++;
+        items[name].amount += price;
+    } else {
+        items[name] = {
+            quantity: 1,
+            amount: price
+        };
+    }
+
+    updateCart();
+}
+
+function updateCart() {
+    let cartList = document.getElementById("cartList");
+    cartList.innerHTML = "";
+
+    for (let name in items) {
+        let li = document.createElement("li");
+        li.innerText =
+            `${name} x${items[name].quantity} - ₹${items[name].amount}`;
+        cartList.appendChild(li);
+    }
 }
 
 function buyNow() {
-    alert("Thank you for shopping!\nTotal Amount: ₹" + total);
+    localStorage.setItem("cart", cart);
+    localStorage.setItem("total", total);
+
+    window.location.href = "bill.html";
 }

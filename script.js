@@ -14,5 +14,11 @@ function addToCart(name, price) {
 }
 
 function buyNow() {
-    alert("Thank you for shopping!\nTotal Amount: ₹" + total);
+    
+    function buyNow() {
+    localStorage.setItem("cart", cart);
+    localStorage.setItem("total", total);
+
+    window.location.href = "bill.html";
+}
 }

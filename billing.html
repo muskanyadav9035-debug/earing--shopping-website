@@ -1,25 +1,58 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Billing Page</title>
+<title>Billing</title>
 </head>
 
 <body>
 
-<h1>Billing</h1>
+<h1>Your Bill</h1>
 
-<p>🛒 Cart Items: <span id="cartCount">0</span></p>
+<h3>Items:</h3>
 
-<h3>Your Items</h3>
 <ul id="cartList"></ul>
+
 
 <h2>Total Bill: ₹<span id="total">0</span></h2>
 
-<button onclick="buyNow()">Buy Now</button>
+
+<button onclick="placeOrder()">Place Order</button>
 
 
-<script src="script.js"></script>
+<script>
+
+let items = JSON.parse(localStorage.getItem("items")) || {};
+let total = localStorage.getItem("total") || 0;
+
+
+let list = document.getElementById("cartList");
+
+
+for(let name in items){
+
+    let li = document.createElement("li");
+
+    li.innerText =
+    `${name} x${items[name].quantity} - ₹${items[name].amount}`;
+
+    list.appendChild(li);
+}
+
+
+document.getElementById("total").innerText = total;
+
+
+
+function placeOrder(){
+
+    alert("Order placed successfully!");
+
+    localStorage.clear();
+
+    window.location.href="index.html";
+}
+
+</script>
 
 </body>
 </html>

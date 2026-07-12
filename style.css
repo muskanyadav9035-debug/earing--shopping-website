@@ -1,28 +1,27 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #fff0f5;
-    text-align: center;
-    margin: 30px;
+body{
+    text-align:center;
+    background:#fff0f5;
+    font-family:Arial;
 }
 
-h1 {
-    color: #d63384;
+.products{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
 }
 
-.product {
-    background-color: white;
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin: 20px auto;
-    width: 300px;
-    border-radius: 10px;
+.product{
+    background:white;
+    width:250px;
+    margin:20px;
+    padding:20px;
+    border-radius:10px;
 }
 
-button {
-    background-color: #d63384;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
+button{
+    background:#d63384;
+    color:white;
+    border:none;
+    padding:10px;
+    cursor:pointer;
 }

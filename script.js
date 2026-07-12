@@ -1,10 +1,32 @@
-let count = 0;
+let cart = 0;
+let total = 0;
 
-const buttons = document.querySelectorAll("button");
+function addToCart(name,price){
+    cart++;
+    total += price;
 
-buttons.forEach(button => {
-    button.addEventListener("click", function () {
-        count++;
-        alert("Item added to cart! Total items: " + count);
+    document.getElementById("cartCount").innerText = cart;
+    document.getElementById("total").innerText = total;
+
+    alert(name + " added to cart!");
+}
+
+function buyNow(){
+    alert("Thank you for shopping!\nTotal Amount: ₹" + total);
+}
+
+document.getElementById("search").addEventListener("keyup", function(){
+    let value = this.value.toLowerCase();
+    let products = document.querySelectorAll(".product");
+
+    products.forEach(function(product){
+        let name = product.dataset.name.toLowerCase();
+
+        if(name.includes(value)){
+            product.style.display = "block";
+        }
+        else{
+            product.style.display = "none";
+        }
     });
 });

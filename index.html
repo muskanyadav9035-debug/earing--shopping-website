@@ -6,28 +6,62 @@
 </head>
 <body>
 
-    <h1>✨ Muskan's Earring Shop ✨</h1>
-    <p>Beautiful earrings for every occasion.</p>
+<h1>✨ Muskan's Earring Shop ✨</h1>
 
-    <div class="product">
-        <h2>Gold Hoop Earrings</h2>
-        <p>Price: ₹499</p>
-        <button>Add to Cart</button>
-    </div>
+<input type="text" id="search" placeholder="Search earrings...">
 
-    <div class="product">
-        <h2>Pearl Earrings</h2>
-        <p>Price: ₹699</p>
-        <button>Add to Cart</button>
-    </div>
+<p>🛒 Cart Items: <span id="cartCount">0</span></p>
 
-    <div class="product">
-        <h2>Silver Stud Earrings</h2>
-        <p>Price: ₹399</p>
-        <button>Add to Cart</button>
-    </div>
+<div class="products">
 
-    <script src="script.js"></script>
+<div class="product" data-name="Stud">
+    <img src="earrings.png" width="150">
+    <h2>Stud</h2>
+    <p>₹99</p>
+    <button onclick="addToCart('Stud',99)">Add to Cart</button>
+</div>
+
+<div class="product" data-name="Leverback">
+    <img src="earrings.png" width="150">
+    <h2>Leverback</h2>
+    <p>₹150</p>
+    <button onclick="addToCart('Leverback',150)">Add to Cart</button>
+</div>
+
+<div class="product" data-name="English Lock">
+    <img src="earrings.png" width="150">
+    <h2>English Lock</h2>
+    <p>₹200</p>
+    <button onclick="addToCart('English Lock',200)">Add to Cart</button>
+</div>
+
+<div class="product" data-name="Wire Hook">
+    <img src="earrings.png" width="150">
+    <h2>Wire Hook</h2>
+    <p>₹170</p>
+    <button onclick="addToCart('Wire Hook',170)">Add to Cart</button>
+</div>
+
+<div class="product" data-name="Huggie">
+    <img src="earrings.png" width="150">
+    <h2>Huggie</h2>
+    <p>₹250</p>
+    <button onclick="addToCart('Huggie',250)">Add to Cart</button>
+</div>
+
+<div class="product" data-name="Dangle">
+    <img src="earrings.png" width="150">
+    <h2>Dangle</h2>
+    <p>₹300</p>
+    <button onclick="addToCart('Dangle',300)">Add to Cart</button>
+</div>
+
+</div>
+
+<h2>Total: ₹<span id="total">0</span></h2>
+<button onclick="buyNow()">Buy Now</button>
+
+<script src="script.js"></script>
 
 </body>
 </html>
